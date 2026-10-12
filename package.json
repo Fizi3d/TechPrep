@@ -1,0 +1,20 @@
+{
+  "name": "techprep",
+  "version": "1.0.0",
+  "description": "Computer Science Technical Interview Assistance",
+  "homepage": "https://github.com/Fizi3d/TechPrep#readme",
+  "bugs": {
+    "url": "https://github.com/Fizi3d/TechPrep/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fizi3d/TechPrep.git"
+  },
+  "license": "ISC",
+  "author": "Matias Rosado",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
