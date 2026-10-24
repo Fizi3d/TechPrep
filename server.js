@@ -3,12 +3,16 @@ import "dotenv/config";
 import pool from "./db.js";
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
+import loginRouter from "./routes/login.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-
+app.use("/api/login", loginRouter);
+app.use("/api/register", loginRouter);
+app.use("/api/logout", loginRouter);
+app.use("/api/me", loginRouter);
 
 const PgStore = connectPgSimple(session);
 
