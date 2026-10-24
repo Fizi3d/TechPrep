@@ -1,10 +1,10 @@
-import { Rotuer } from "express";
+import { Router } from "express";
 import pool from "../db.js";
 import bcrypt from "bcrypt";
 
-const router = Router();
+const loginRouter = Router();
 
-router.post("/register", async (req, res) => {
+loginRouter.post("/register", async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password) {
         return res.status(400).json({ error: "Email and password are required" });
@@ -26,7 +26,7 @@ router.post("/register", async (req, res) => {
     }
 });
 
-router.post("/login", async (req, res) => {
+loginRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
         const result = await pool.query(
@@ -46,11 +46,11 @@ router.post("/login", async (req, res) => {
     }
 });
 
-router.post("/logout", (req, res) => {
+loginRouter.post("/logout", (req, res) => {
     req.session.destroy(() => res.json({ok: true}));
 });
 
-router.get("/me", async (req, res) => {
+loginRouter.get("/me", async (req, res) => {
     if (!req.session.userId) return res.status(401).json({ error: "not logged in"});
     const result = await pool.query(
         "SELECT id, email FROM users WHERE id = $1",
@@ -60,4 +60,4 @@ router.get("/me", async (req, res) => {
     res.json({ user });
 });
 
-export default router;
+export default loginRouter;
