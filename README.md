@@ -64,3 +64,46 @@ The original question content is preserved and imported into our PostgreSQL data
 - `questions` - Stores interview questions and answers.
 - `tags` - Stores technologies and question topics.
 - `question_tags` - Connects questions with their tags.
+
+## Auth Routes
+`path` represents the base url being hosted by the server
+
+User session is stored in a cookie. if using curl, make sure to pass -c [path] on the first authenticaiton request to store the cookie into a file, and -b [path] to load from the file for subsequent requests.
+
+### register
+`path/api/register`
+
+- creates a user using an email and password
+- also logs in
+- generates a cookie to represent the user session
+
+
+Content-Type:
+applicaiton/json
+
+data:
+{email: "", password: ""}
+
+### login
+`path/api/login`
+
+- accepts email and username to log in
+- generates a token to represent the user session
+
+Content-Type:
+applicaiton/json
+
+data:
+{email: "", password: ""}
+
+### me
+`path/api/me`
+
+- requires a user session cookie
+- returns user data
+
+### logout
+`path/api/logout`
+
+- requires a user session cookie
+- depreciates the session cookie
