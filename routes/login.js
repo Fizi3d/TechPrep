@@ -12,7 +12,7 @@ loginRouter.post("/register", async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
         const result = await pool.query(
-            "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id, email",
+            "INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING id, email",
             [email.toLowerCase(), hashedPassword]
         );
         req.session.userId = result.rows[0].id;
@@ -30,7 +30,7 @@ loginRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
         const result = await pool.query(
-            "SELECT id, email, password FROM users WHERE email = $1",
+            "SELECT id, email, password_hash FROM users WHERE email = $1",
             [(email || "").toLowerCase()]
         )
         const user = result.rows[0];

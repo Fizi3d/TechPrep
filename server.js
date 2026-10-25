@@ -9,10 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use("/api/login", loginRouter);
-app.use("/api/register", loginRouter);
-app.use("/api/logout", loginRouter);
-app.use("/api/me", loginRouter);
+
 
 const PgStore = connectPgSimple(session);
 
@@ -28,6 +25,8 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
     }
 }));
+
+app.use("/api", loginRouter);
 
 app.get("/api/health", (req, res) => {
     res.json({
