@@ -107,3 +107,28 @@ data:
 
 - requires a user session cookie
 - depreciates the session cookie
+
+## Frontend Setup
+
+The React app lives in `client/` (Vite + React + react-router).
+
+```
+cd client
+npm install
+npm run dev
+```
+
+The app runs at http://localhost:5173. In dev, Vite proxies `/api` requests to the Express server on http://localhost:3000, so start the backend (`node server.js`) in another terminal to see live data.
+
+Copy `client/.env.example` to `client/.env` if you need to point the app at a different API. Leave `VITE_API_URL` blank for local development.
+
+### Routes
+
+- `/` and `/dashboard` - Dashboard
+- `/login` - Login
+- `/questions` - Question bank
+- `/jobs` - Job postings
+- `/plan` - Prep plan
+- `/admin` - Admin
+
+API calls go through `client/src/api/client.js` (`get`, `post`, `put`, `del`).
