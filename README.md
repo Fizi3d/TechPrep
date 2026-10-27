@@ -65,27 +65,45 @@ The original question content is preserved and imported into our PostgreSQL data
 - `tags` - Stores technologies and question topics.
 - `question_tags` - Connects questions with their tags.
 
-## Frontend Setup
+## Auth Routes
+`path` represents the base url being hosted by the server
 
-The React app lives in `client/` (Vite + React + react-router).
+User session is stored in a cookie. if using curl, make sure to pass -c [path] on the first authenticaiton request to store the cookie into a file, and -b [path] to load from the file for subsequent requests.
 
-```
-cd client
-npm install
-npm run dev
-```
+### register
+`path/api/register`
 
-The app runs at http://localhost:5173. In dev, Vite proxies `/api` requests to the Express server on http://localhost:3000, so start the backend (`node server.js`) in another terminal to see live data.
+- creates a user using an email and password
+- also logs in
+- generates a cookie to represent the user session
 
-Copy `client/.env.example` to `client/.env` if you need to point the app at a different API. Leave `VITE_API_URL` blank for local development.
 
-### Routes
+Content-Type:
+applicaiton/json
 
-- `/` and `/dashboard` - Dashboard
-- `/login` - Login
-- `/questions` - Question bank
-- `/jobs` - Job postings
-- `/plan` - Prep plan
-- `/admin` - Admin
+data:
+{email: "", password: ""}
 
-API calls go through `client/src/api/client.js` (`get`, `post`, `put`, `del`).
+### login
+`path/api/login`
+
+- accepts email and username to log in
+- generates a token to represent the user session
+
+Content-Type:
+applicaiton/json
+
+data:
+{email: "", password: ""}
+
+### me
+`path/api/me`
+
+- requires a user session cookie
+- returns user data
+
+### logout
+`path/api/logout`
+
+- requires a user session cookie
+- depreciates the session cookie
