@@ -12,7 +12,7 @@ async function request(endpoint, { method = 'GET', body } = {}) {
 
   const data = await res.json().catch(() => null)
   if (!res.ok) {
-    throw new Error(data?.message || `Request failed (${res.status})`)
+    throw new Error(data?.error || data?.message || `Request failed (${res.status})`)
   }
   return data
 }
