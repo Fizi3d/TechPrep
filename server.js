@@ -54,3 +54,22 @@ app.get("/api/db-health", async (req, res) => {
 app.listen(PORT, () => {
     console.log(`TechPrep server running on port ${PORT}`);
 });
+
+app.get("/api/questions", async (req, res) => {
+    if (!req.session.userId) {
+        return res.status(401).json({
+            error: "Please log in first"
+        });
+    }
+    try {
+        const result = await pool.query(
+            "SELECT id, question_text FROM questions ORDER BY id LIMIT 5"
+        );
+        res.json(result.rows);
+    } catch (error) {
+        console.error("Error loading questions:", error);
+        res.status(500).json({
+            error: "Could not load questions"
+        });
+    }
+});
