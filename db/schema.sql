@@ -6,6 +6,9 @@ CREATE TABLE IF NOT EXISTS users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE users
+ADD COLUMN IF NOT EXISTS username VARCHAR(50) UNIQUE;
+
 
 -- here we store interview questions from different sources
 CREATE TABLE IF NOT EXISTS questions (
