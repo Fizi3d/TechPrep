@@ -108,6 +108,45 @@ data:
 - requires a user session cookie
 - depreciates the session cookie
 
+## Questions Routes
+
+### list questions
+`GET path/api/questions`
+
+- requires a user session cookie
+- returns questions with their tags, plus pagination info
+- every filter given is combined with AND
+
+Query parameters (all optional):
+
+| Parameter | Example | Notes |
+| --- | --- | --- |
+| `type` | `MCQ_SINGLE` | question format: MCQ_SINGLE, MCQ_MULTI, SHORT_ANSWER, FLASHCARD, TRUE_FALSE, FIND_THE_BUG, CODE_OUTPUT |
+| `difficulty` | `medium` | one of intro, easy, medium, hard, expert |
+| `tag` | `React,rules-of-hooks` | comma separated; a question must have every tag listed |
+| `search` | `promise` | case-insensitive match on the question text |
+| `page` | `2` | defaults to 1 |
+| `limit` | `20` | defaults to 20, max 100 |
+
+Example: `path/api/questions?difficulty=medium&tag=JavaScript&page=1`
+
+Response:
+```
+{
+  "questions": [
+    { "id": 1, "question_text": "...", "difficulty": "easy", "question_type": "FIND_THE_BUG", "tags": ["array-methods", "JavaScript"] }
+  ],
+  "total": 110,
+  "page": 1,
+  "limit": 20,
+  "totalPages": 6
+}
+```
+
+Invalid parameters return 400 with `{ "error": "..." }`.
+
+Run the tests with `node tests/test-questions-api.js` (uses the database from your .env).
+
 ## Frontend Setup
 
 The React app lives in `client/` (Vite + React + react-router).
