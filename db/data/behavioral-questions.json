@@ -1,0 +1,308 @@
+
+{
+  "name": "techprep-behavioral-questions",
+  "version": "1.0.0",
+  "questionCount": 25,
+  "questions": [
+    {
+      "id": "behavioral-a-01",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "easy",
+      "tags": ["teamwork", "communication"],
+      "prompt": "Describe a time you worked with a team to complete a challenging project.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project and your team. Task: Explain your responsibility. Action: Describe how you collaborated with others. Result: Share what the team accomplished and your contribution."
+      },
+      "explanation": "Focus on teamwork, communication, and your personal contribution to the project's success."
+    },
+    {
+      "id": "behavioral-a-02",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["conflict-resolution", "communication", "teamwork"],
+      "prompt": "Tell me about a time you disagreed with a teammate about a technical decision.",
+      "answer": {
+        "sampleAnswer": "Situation: Explain the project and disagreement. Task: Describe the decision that needed to be made. Action: Explain how you listened, discussed alternatives, and worked toward a solution. Result: Describe the final decision and what you learned."
+      },
+      "explanation": "Show that you can handle disagreements professionally and make decisions based on evidence."
+    },
+    {
+      "id": "behavioral-a-03",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["problem-solving", "debugging", "adaptability"],
+      "prompt": "Describe a time you solved an unexpected technical problem during a project.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the unexpected issue. Task: Explain what needed to be fixed. Action: Discuss how you investigated the problem and tested possible solutions. Result: Explain how the issue was resolved and what you learned."
+      },
+      "explanation": "Focus on your troubleshooting process, persistence, and ability to solve problems."
+    },
+    {
+      "id": "behavioral-a-04",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["leadership", "initiative", "teamwork"],
+      "prompt": "Tell me about a time you took responsibility for leading a team or project task.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project and team. Task: Explain why someone needed to take the lead. Action: Describe how you organized the work and supported teammates. Result: Explain the outcome and how your leadership helped."
+      },
+      "explanation": "Demonstrate initiative, organization, and the ability to guide others toward a goal."
+    },
+    {
+      "id": "behavioral-a-05",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "easy",
+      "tags": ["time-management", "organization", "prioritization"],
+      "prompt": "Give an example of a time you had to manage several deadlines at once.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the different deadlines. Task: Explain what you were responsible for completing. Action: Describe how you organized and prioritized the work. Result: Explain what you completed and whether you met the deadlines."
+      },
+      "explanation": "Show how you prioritize tasks, stay organized, and manage your time effectively."
+    },
+    {
+      "id": "behavioral-a-06",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["feedback", "continuous-learning", "professional-growth"],
+      "prompt": "Tell me about a time someone gave you feedback that changed how you approached your work.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the work and feedback you received. Task: Explain what needed improvement. Action: Describe how you applied the feedback. Result: Share how your work improved and what you learned."
+      },
+      "explanation": "Demonstrate that you are open to constructive criticism and willing to improve."
+    },
+    {
+      "id": "behavioral-a-07",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "easy",
+      "tags": ["teamwork", "collaboration", "support"],
+      "prompt": "Describe a time you helped a teammate who was struggling with an assignment or task.",
+      "answer": {
+        "sampleAnswer": "Situation: Explain what your teammate was struggling with. Task: Describe why your help was needed. Action: Explain how you supported them without taking over their work. Result: Describe how your assistance affected the team."
+      },
+      "explanation": "Highlight your willingness to help others while encouraging teamwork and independence."
+    },
+    {
+      "id": "behavioral-a-08",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["accountability", "problem-solving", "learning"],
+      "prompt": "Tell me about a mistake you made in a project and how you handled it.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project and your mistake. Task: Explain what needed to be corrected. Action: Describe how you took responsibility and fixed the issue. Result: Explain the outcome and how you prevent similar mistakes."
+      },
+      "explanation": "Focus on honesty, accountability, and learning from mistakes instead of blaming others."
+    },
+    {
+      "id": "behavioral-a-09",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "easy",
+      "tags": ["adaptability", "learning", "technology"],
+      "prompt": "Describe a time you had to learn a new programming language, framework, or tool to complete a task.",
+      "answer": {
+        "sampleAnswer": "Situation: Explain why you needed the new technology. Task: Describe what you needed to accomplish. Action: Explain how you learned and practiced using the tool. Result: Share how you applied your new knowledge."
+      },
+      "explanation": "Show that you can learn unfamiliar technologies and adapt to new requirements."
+    },
+    {
+      "id": "behavioral-a-10",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["communication", "requirements", "problem-solving"],
+      "prompt": "Tell me about a time you received unclear instructions for a project.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the unclear requirements. Task: Explain what you needed to deliver. Action: Describe how you asked questions and confirmed expectations. Result: Explain how the clarification improved your work."
+      },
+      "explanation": "Highlight clear communication, asking useful questions, and avoiding incorrect assumptions."
+    },
+    {
+      "id": "behavioral-a-11",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["decision-making", "time-management", "quality"],
+      "prompt": "Describe a time you had to balance software quality with a tight deadline.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project and deadline. Task: Explain the quality requirements and time constraints. Action: Describe how you prioritized important features and managed risks. Result: Explain what was delivered and whether your decisions worked."
+      },
+      "explanation": "Show how you make reasonable tradeoffs without ignoring important quality or security concerns."
+    },
+    {
+      "id": "behavioral-a-12",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["communication", "technical-explanation", "collaboration"],
+      "prompt": "Tell me about a time you explained a technical concept to someone without a technical background.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the person and technical topic. Task: Explain what they needed to understand. Action: Describe how you simplified the explanation and checked their understanding. Result: Explain whether your explanation helped."
+      },
+      "explanation": "Demonstrate your ability to communicate technical information clearly to different audiences."
+    },
+    {
+      "id": "behavioral-a-13",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["user-feedback", "product-improvement", "adaptability"],
+      "prompt": "Describe a time feedback from a user or classmate helped you improve a project.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project and feedback. Task: Explain what needed improvement. Action: Describe the changes you made based on the feedback. Result: Explain how the changes improved the final product."
+      },
+      "explanation": "Focus on listening to users and making improvements based on their needs."
+    },
+    {
+      "id": "behavioral-a-14",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["initiative", "ownership", "responsibility"],
+      "prompt": "Tell me about a time you noticed something needed to be done and took action without being asked.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the problem or opportunity you noticed. Task: Explain why action was important. Action: Describe what you did independently or with others. Result: Share the impact of your initiative."
+      },
+      "explanation": "Show that you take ownership of problems and contribute beyond assigned tasks."
+    },
+    {
+      "id": "behavioral-a-15",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["adaptability", "change-management", "planning"],
+      "prompt": "Describe a project where the requirements changed after development had already started.",
+      "answer": {
+        "sampleAnswer": "Situation: Explain the project and original plan. Task: Describe the new requirements. Action: Explain how you adjusted your tasks or implementation. Result: Describe the outcome and what the change taught you."
+      },
+      "explanation": "Demonstrate flexibility and the ability to adjust plans when project requirements change."
+    },
+    {
+      "id": "behavioral-a-16",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["pressure", "problem-solving", "resilience"],
+      "prompt": "Tell me about a time you had to resolve an important issue while working under pressure.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the urgent problem and why it mattered. Task: Explain what needed immediate attention. Action: Describe how you stayed focused and worked through the issue. Result: Explain how the situation ended."
+      },
+      "explanation": "Focus on staying calm, identifying priorities, and solving problems under pressure."
+    },
+    {
+      "id": "behavioral-a-17",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["process-improvement", "initiative", "efficiency"],
+      "prompt": "Give an example of a time you improved a process or workflow to make a project more efficient.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the original workflow and its problems. Task: Explain what needed improvement. Action: Describe the changes you suggested or implemented. Result: Explain how the changes saved time or improved the work."
+      },
+      "explanation": "Show your ability to recognize inefficiencies and make practical improvements."
+    },
+    {
+      "id": "behavioral-a-18",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["failure", "resilience", "learning"],
+      "prompt": "Tell me about a project where your original approach failed and you had to try something different.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project and original approach. Task: Explain the goal you were trying to achieve. Action: Describe how you recognized the problem and changed your approach. Result: Explain the outcome and what you learned."
+      },
+      "explanation": "Demonstrate persistence, self-reflection, and the ability to learn from unsuccessful approaches."
+    },
+    {
+      "id": "behavioral-a-19",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["decision-making", "critical-thinking", "uncertainty"],
+      "prompt": "Describe a time you had to make an important decision without having all the information you wanted.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the decision and missing information. Task: Explain what you needed to decide. Action: Discuss how you evaluated the available evidence and risks. Result: Explain the outcome and what you would do differently."
+      },
+      "explanation": "Show careful judgment and the ability to make informed decisions under uncertainty."
+    },
+    {
+      "id": "behavioral-a-20",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["remote-collaboration", "communication", "organization"],
+      "prompt": "Tell me about a time you worked with teammates who had different schedules or could not meet in person.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the team and scheduling challenges. Task: Explain what the group needed to complete. Action: Describe how you communicated and coordinated responsibilities. Result: Explain how the collaboration worked."
+      },
+      "explanation": "Highlight effective remote communication, organization, and reliability."
+    },
+    {
+      "id": "behavioral-a-21",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["teamwork", "open-mindedness", "collaboration"],
+      "prompt": "Describe a time someone suggested an approach that was very different from your own.",
+      "answer": {
+        "sampleAnswer": "Situation: Explain the project and different viewpoints. Task: Describe the decision the team needed to make. Action: Explain how you considered the other person's ideas. Result: Share the chosen approach and what you learned."
+      },
+      "explanation": "Demonstrate that you respect different perspectives and can evaluate ideas objectively."
+    },
+    {
+      "id": "behavioral-a-22",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["ethics", "security", "responsibility"],
+      "prompt": "Tell me about a time you identified a privacy, security, or ethical concern in a project.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project and concern. Task: Explain why the issue needed attention. Action: Describe how you raised the concern and helped address it. Result: Explain what changed and what you learned."
+      },
+      "explanation": "Focus on responsible decision-making, protecting users, and communicating potential risks."
+    },
+    {
+      "id": "behavioral-a-23",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["mentoring", "knowledge-sharing", "teamwork"],
+      "prompt": "Describe a time you taught someone a technical skill or helped them understand a difficult concept.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe who needed help and what they were learning. Task: Explain what you wanted them to understand. Action: Describe how you explained or demonstrated the concept. Result: Explain what they learned and how you knew."
+      },
+      "explanation": "Show patience, communication skills, and the ability to share technical knowledge."
+    },
+    {
+      "id": "behavioral-a-24",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["communication", "expectation-management", "accountability"],
+      "prompt": "Tell me about a time you realized a task would take longer than expected and had to inform others.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the task and original deadline. Task: Explain your responsibilities and the delay. Action: Describe how you communicated the issue and proposed a new plan. Result: Explain how others responded and what happened."
+      },
+      "explanation": "Focus on transparency, early communication, and managing expectations responsibly."
+    },
+    {
+      "id": "behavioral-a-25",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["creativity", "problem-solving", "resourcefulness"],
+      "prompt": "Describe a time you found a creative solution to a problem when you had limited resources.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the problem and resource limitations. Task: Explain what you needed to accomplish. Action: Describe the creative approach you developed and tested. Result: Explain whether it worked and what you learned."
+      },
+      "explanation": "Highlight creative thinking, practical problem-solving, and making good use of available resources."
+    }
+  ]
+}
