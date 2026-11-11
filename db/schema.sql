@@ -9,6 +9,9 @@ CREATE TABLE IF NOT EXISTS users (
 ALTER TABLE users
 ADD COLUMN IF NOT EXISTS username VARCHAR(50) UNIQUE;
 
+ALTER TABLE users
+ADD COLUMN IF NOT EXISTS role TEXT NOT NULL DEFAULT 'user'
+CHECK (role IN ('user', 'admin'));
 
 -- here we store interview questions from different sources
 CREATE TABLE IF NOT EXISTS questions (
