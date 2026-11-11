@@ -1,6 +1,8 @@
 import { Router } from "express";
 import pool from "../db.js";
 
+import requireAuth, { requireAdmin } from "../middleware/requireAuth.js";
+
 const questionsRouter = Router();
 
 const DIFFICULTIES = ["intro", "easy", "medium", "hard", "expert"];
@@ -133,11 +135,7 @@ export async function findQuestions({ type, difficulty, search, tags, page, limi
 }
 
 // GET /api/questions?type=&difficulty=&tag=&search=&page=&limit=
-questionsRouter.get("/questions", async (req, res) => {
-    if (!req.session.userId) {
-        return res.status(401).json({ error: "Please log in first" });
-    }
-
+questionsRouter.get("/questions", requireAuth, async (req, res) => {
     const { filters, error } = parseQuestionFilters(req.query);
     if (error) {
         return res.status(400).json({ error });
@@ -150,5 +148,105 @@ questionsRouter.get("/questions", async (req, res) => {
         res.status(500).json({ error: "Could not load questions" });
     }
 });
+
+
+// POST /api/questions/:questionId/tags
+// Example body: { "tagId": 1 }
+questionsRouter.post("/questions/:questionId/tags", requireAuth, requireAdmin, async (req, res) => {
+    const questionId = Number(req.params.questionId);
+    const tagId = Number(req.body?.tagId);
+
+    if (
+      !Number.isInteger(questionId) || questionId < 1 ||
+      !Number.isInteger(tagId) || tagId < 1
+    ) {
+      return res.status(400).json({
+        error: "questionId and tagId must be positive whole numbers"
+      });
+    }
+
+    try {
+      const question = await pool.query(
+        "SELECT id FROM questions WHERE id = $1",
+        [questionId]
+      );
+      if (question.rowCount === 0) {
+        return res.status(404).json({ error: "Question not found" });
+      }
+
+      const tag = await pool.query(
+        "SELECT id, name FROM tags WHERE id = $1",
+        [tagId]
+      );
+      if (tag.rowCount === 0) {
+        return res.status(404).json({ error: "Tag not found" });
+      }
+
+      const result = await pool.query(
+        `INSERT INTO question_tags (question_id, tag_id)
+         VALUES ($1, $2)
+         ON CONFLICT (question_id, tag_id) DO NOTHING
+         RETURNING question_id, tag_id`,
+        [questionId, tagId]
+      );
+
+      return res.status(result.rowCount ? 201 : 200).json({
+        message: result.rowCount
+          ? "Tag added to question"
+          : "Tag is already assigned to this question",
+        questionId,
+        tag: tag.rows[0]
+      });
+    } catch (error) {
+      console.error("Error adding tag to question:", error);
+      return res.status(500).json({ error: "Could not add tag to question" });
+    }
+  }
+);
+
+
+questionsRouter.delete(
+  "/questions/:questionId/tags/:tagId",
+  requireAuth,
+  requireAdmin,
+  async (req, res) => {
+    const questionId = Number(req.params.questionId);
+    const tagId = Number(req.params.tagId);
+
+    if (
+      !Number.isInteger(questionId) || questionId < 1 ||
+      !Number.isInteger(tagId) || tagId < 1
+    ) {
+      return res.status(400).json({
+        error: "questionId and tagId must be positive whole numbers",
+      });
+    }
+
+    try {
+      const result = await pool.query(
+        `DELETE FROM question_tags
+         WHERE question_id = $1 AND tag_id = $2
+         RETURNING question_id, tag_id`,
+        [questionId, tagId]
+      );
+
+      if (result.rowCount === 0) {
+        return res.status(404).json({
+          error: "That tag is not assigned to this question",
+        });
+      }
+
+      return res.json({
+        message: "Tag removed from question",
+        ...result.rows[0],
+      });
+    } catch (error) {
+      console.error("Error removing tag from question:", error);
+      return res.status(500).json({
+        error: "Could not remove tag from question",
+      });
+    }
+  }
+);
 
 export default questionsRouter;
