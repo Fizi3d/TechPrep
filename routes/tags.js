@@ -3,8 +3,7 @@ import db from "../db.js";
 const tagsRouter = Router();
 
 
-import requireAuth from "../middleware/requireAuth";
-import requireAdmin from "../middleware/requireAuth";
+import requireAuth, {requireAdmin} from "../middleware/requireAuth.js";
 
 // GET /api/tags — return all tag information
 tagsRouter.get("/", requireAuth, async (req, res) => {
