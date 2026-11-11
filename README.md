@@ -147,6 +147,22 @@ Invalid parameters return 400 with `{ "error": "..." }`.
 
 Run the tests with `node tests/test-questions-api.js` (uses the database from your .env).
 
+## Tags Routes
+
+All tag routes require a logged-in user session. Creating and deleting tags require an admin role.
+
+| Method | Path | Access | Description |
+|---|---|---|---|
+| `GET` | `/api/tags` | Logged-in user | Returns all tags |
+| `POST` | `/api/tags` | Admin | Creates a tag |
+| `DELETE` | `/api/tags/:id` | Admin | Deletes a tag |
+| `POST` | `/api/questions/:questionId/tags` | Admin | Assigns an existing tag to a question |
+
+### Get all tags
+
+```http
+GET /api/tags
+
 ## Frontend Setup
 
 The React app lives in `client/` (Vite + React + react-router).
@@ -171,3 +187,5 @@ Copy `client/.env.example` to `client/.env` if you need to point the app at a di
 - `/admin` - Admin
 
 API calls go through `client/src/api/client.js` (`get`, `post`, `put`, `del`).
+
+
