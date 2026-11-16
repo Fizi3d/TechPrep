@@ -145,7 +145,8 @@ Response:
 
 Invalid parameters return 400 with `{ "error": "..." }`.
 
-Run the tests with `node tests/test-questions-api.js` (uses the database from your .env).
+Run the test suite with `npm test` (uses the database from your `.env`).
+A separate server process is needed for tests regarding server behavior.
 
 ## Tags Routes
 
