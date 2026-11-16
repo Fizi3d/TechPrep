@@ -14,7 +14,7 @@ function QuestionsPage() {
     async function loadQuestions() {
       try {
         const data = await get('/api/questions')
-        setQuestions(data)
+        setQuestions(data.questions)
       } catch (err) {
         if (err.message === 'Please log in first' || err.message.includes('401')) {
           navigate('/login')
