@@ -4,6 +4,7 @@ import pool from "./db.js";
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
 import loginRouter from "./routes/login.js";
+import questionsRouter from "./routes/questions.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,6 +28,7 @@ app.use(session({
 }));
 
 app.use("/api", loginRouter);
+app.use("/api", questionsRouter);
 
 app.get("/api/health", (req, res) => {
     res.json({
@@ -53,23 +55,4 @@ app.get("/api/db-health", async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`TechPrep server running on port ${PORT}`);
-});
-
-app.get("/api/questions", async (req, res) => {
-    if (!req.session.userId) {
-        return res.status(401).json({
-            error: "Please log in first"
-        });
-    }
-    try {
-        const result = await pool.query(
-            "SELECT id, question_text FROM questions ORDER BY id LIMIT 5"
-        );
-        res.json(result.rows);
-    } catch (error) {
-        console.error("Error loading questions:", error);
-        res.status(500).json({
-            error: "Could not load questions"
-        });
-    }
 });

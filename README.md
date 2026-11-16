@@ -145,7 +145,7 @@ Response:
 
 Invalid parameters return 400 with `{ "error": "..." }`.
 
-Run the test suite with `npm test` (uses the database from your `.env`). The authentication tests start the API on a temporary local port, so no separate server process is needed.
+Run the tests with `node tests/test-questions-api.js` (uses the database from your .env).
 
 ## Tags Routes
 
@@ -187,3 +187,5 @@ Copy `client/.env.example` to `client/.env` if you need to point the app at a di
 - `/admin` - Admin
 
 API calls go through `client/src/api/client.js` (`get`, `post`, `put`, `del`).
+
+
