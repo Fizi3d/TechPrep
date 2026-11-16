@@ -1,0 +1,313 @@
+
+{
+  "name": "techprep-behavioral-questions-b",
+  "version": "1.0.0",
+  "questionCount": 25,
+  "description": "Original behavioral interview questions based on common interview preparation topics.",
+  "references": [
+    "https://capd.mit.edu/resources/sample-interview-questions/",
+    "https://careerservices.upenn.edu/resources/sample-behavioural-interview-questions/"
+  ],
+  "questions": [
+    {
+      "id": "behavioral-b-01",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["onboarding", "adaptability"],
+      "prompt": "Tell me about a time you joined a project that was already in progress and had to catch up.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project when you joined. Task: Explain what you needed to understand or complete. Action: Describe how you got familiar with the existing work. Result: Explain how you became productive and contributed."
+      },
+      "explanation": "Show how you get up to speed and contribute to an existing project."
+    },
+    {
+      "id": "behavioral-b-02",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "easy",
+      "tags": ["communication", "help-seeking"],
+      "prompt": "Describe a time you were stuck on a task and had to ask someone for help.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the task and why you were stuck. Task: Explain what you needed to finish. Action: Describe what you tried before asking and how you requested help. Result: Explain how the help allowed you to move forward."
+      },
+      "explanation": "Show that you can work independently but also recognize when asking for help is necessary."
+    },
+    {
+      "id": "behavioral-b-03",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["code-review", "communication"],
+      "prompt": "Tell me about a time you reviewed someone else's code or work and suggested improvements.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the work you reviewed. Task: Explain what you were checking. Action: Describe the suggestions you gave and how you communicated them. Result: Explain whether the feedback improved the work."
+      },
+      "explanation": "Focus on giving useful and respectful feedback to others."
+    },
+    {
+      "id": "behavioral-b-04",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["handoff", "communication", "organization"],
+      "prompt": "Describe a time you had to hand over unfinished work so another person could continue it.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the task and why the handoff was needed. Task: Explain what the next person needed. Action: Describe how you shared your progress, files, and instructions. Result: Explain how smoothly the other person continued."
+      },
+      "explanation": "Show that you communicate progress clearly and make teamwork easier."
+    },
+    {
+      "id": "behavioral-b-05",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "easy",
+      "tags": ["documentation", "organization"],
+      "prompt": "Tell me about a time you created documentation or instructions that helped others understand a project.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe what was difficult to understand. Task: Explain what needed to be documented. Action: Describe the instructions or documentation you created. Result: Explain how other people used it."
+      },
+      "explanation": "Highlight clear documentation and helping others work with your code or project."
+    },
+    {
+      "id": "behavioral-b-06",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["presentation", "public-speaking"],
+      "prompt": "Describe a time you presented a project and had to answer a question you were not expecting.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the presentation and audience. Task: Explain what you were presenting. Action: Describe how you handled the unexpected question. Result: Explain how the presentation went and what you learned."
+      },
+      "explanation": "Show confidence, preparation, and honesty when answering unexpected questions."
+    },
+    {
+      "id": "behavioral-b-07",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["estimation", "planning"],
+      "prompt": "Tell me about a time you had to estimate how much work a programming task would require.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the task you needed to estimate. Task: Explain what the estimate was needed for. Action: Describe how you broke down the work and estimated the effort. Result: Explain how accurate the estimate was."
+      },
+      "explanation": "Focus on realistic planning and learning from your estimates."
+    },
+    {
+      "id": "behavioral-b-08",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["product-thinking", "prioritization"],
+      "prompt": "Describe a time you suggested removing or simplifying a feature because it was not useful enough.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the feature and project. Task: Explain what the team wanted to achieve. Action: Describe why you suggested simplifying or removing it. Result: Explain the decision and its impact."
+      },
+      "explanation": "Show that you consider user needs and project value instead of adding unnecessary features."
+    },
+    {
+      "id": "behavioral-b-09",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "easy",
+      "tags": ["independence", "self-management"],
+      "prompt": "Tell me about a time you completed an important task without someone checking your progress regularly.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the task and working conditions. Task: Explain what you were responsible for. Action: Describe how you managed your own progress. Result: Explain how you completed the task."
+      },
+      "explanation": "Demonstrate reliability and the ability to manage independent work."
+    },
+    {
+      "id": "behavioral-b-10",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["risk-management", "planning"],
+      "prompt": "Describe a time you prepared a backup plan because something important in a project might fail.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project and possible risk. Task: Explain what needed to be protected. Action: Describe the backup plan you prepared. Result: Explain whether the plan was needed and how it helped."
+      },
+      "explanation": "Show that you can identify risks early and prepare for problems."
+    },
+    {
+      "id": "behavioral-b-11",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["meeting-management", "collaboration"],
+      "prompt": "Tell me about a time you helped make a team meeting more productive.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the meeting and what was not working. Task: Explain what the group needed to decide. Action: Describe how you helped organize the discussion. Result: Explain what the team accomplished."
+      },
+      "explanation": "Focus on helping a group stay organized and make progress."
+    },
+    {
+      "id": "behavioral-b-12",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["quality-assurance", "attention-to-detail"],
+      "prompt": "Describe a time you caught a small bug or issue before it caused a bigger problem.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project and issue. Task: Explain what you were checking. Action: Describe how you discovered and addressed the issue. Result: Explain what problems were avoided."
+      },
+      "explanation": "Highlight careful testing and attention to detail."
+    },
+    {
+      "id": "behavioral-b-13",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["technical-judgment", "communication"],
+      "prompt": "Tell me about a time you had to explain why a proposed technical solution would not work.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the proposed solution. Task: Explain why the team needed to evaluate it. Action: Describe the evidence or testing you used to explain the problem. Result: Explain what the team decided."
+      },
+      "explanation": "Show that you can communicate technical concerns using evidence."
+    },
+    {
+      "id": "behavioral-b-14",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["trust", "communication"],
+      "prompt": "Describe a time a misunderstanding affected your relationship with a teammate and how you repaired it.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the misunderstanding. Task: Explain what needed to be resolved. Action: Describe how you addressed the issue and rebuilt trust. Result: Explain how the working relationship changed."
+      },
+      "explanation": "Focus on taking responsibility and maintaining professional relationships."
+    },
+    {
+      "id": "behavioral-b-15",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["work-styles", "collaboration"],
+      "prompt": "Tell me about a time you worked with someone whose working style was very different from yours.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the different working styles. Task: Explain what you needed to complete together. Action: Describe how you adjusted your collaboration. Result: Explain how the work turned out."
+      },
+      "explanation": "Show flexibility and respect for different ways of working."
+    },
+    {
+      "id": "behavioral-b-16",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["testing", "data-driven-decisions"],
+      "prompt": "Describe a time you used testing or data to find out whether your idea was correct.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the idea you wanted to check. Task: Explain what you needed to find out. Action: Describe the test or data you used. Result: Explain what the results showed and what you decided."
+      },
+      "explanation": "Demonstrate that you test assumptions instead of relying only on guesses."
+    },
+    {
+      "id": "behavioral-b-17",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["stakeholder-management", "prioritization"],
+      "prompt": "Tell me about a time two people wanted different things from your work and you had to decide what to do first.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the competing requests. Task: Explain what you were responsible for. Action: Describe how you compared priorities and communicated your decision. Result: Explain how the situation was resolved."
+      },
+      "explanation": "Focus on prioritizing requests and communicating expectations."
+    },
+    {
+      "id": "behavioral-b-18",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["accessibility", "user-experience"],
+      "prompt": "Describe a time you made a website, application, or project easier for more people to use.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the original usability problem. Task: Explain what users needed. Action: Describe the changes you made. Result: Explain how the experience improved."
+      },
+      "explanation": "Show awareness of usability and accessibility when building software."
+    },
+    {
+      "id": "behavioral-b-19",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["automation", "efficiency"],
+      "prompt": "Tell me about a time you automated a repetitive task instead of doing it manually every time.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the repetitive task. Task: Explain what needed to be completed regularly. Action: Describe the script or method you used to automate it. Result: Explain how much effort or time it saved."
+      },
+      "explanation": "Highlight practical automation and its measurable benefits."
+    },
+    {
+      "id": "behavioral-b-20",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["delegation", "coordination"],
+      "prompt": "Describe a time you divided a large assignment into smaller tasks for different people.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the assignment and team. Task: Explain what needed to be divided. Action: Describe how you assigned tasks and coordinated progress. Result: Explain how the team completed the work."
+      },
+      "explanation": "Focus on fair task distribution and coordination."
+    },
+    {
+      "id": "behavioral-b-21",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["versatility", "responsibility"],
+      "prompt": "Tell me about a time you took over a responsibility that was normally handled by someone else.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the responsibility and why you took it over. Task: Explain what needed to be done. Action: Describe how you handled the unfamiliar role. Result: Explain the outcome."
+      },
+      "explanation": "Demonstrate willingness to help the team outside your normal responsibilities."
+    },
+    {
+      "id": "behavioral-b-22",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["project-continuity", "teamwork"],
+      "prompt": "Describe a time a teammate became unavailable during a project and the rest of the team had to adjust.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the project and teammate's absence. Task: Explain what work still needed to be completed. Action: Describe how responsibilities were reorganized. Result: Explain how the project continued."
+      },
+      "explanation": "Show how you keep a project moving when team availability changes."
+    },
+    {
+      "id": "behavioral-b-23",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "hard",
+      "tags": ["transparency", "communication"],
+      "prompt": "Tell me about a time you had to share disappointing results with your team or a supervisor.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the work and disappointing results. Task: Explain what others needed to know. Action: Describe how you communicated the results and suggested next steps. Result: Explain what happened afterward."
+      },
+      "explanation": "Focus on honesty and communicating setbacks constructively."
+    },
+    {
+      "id": "behavioral-b-24",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["inclusion", "team-communication"],
+      "prompt": "Describe a time you helped someone who was not speaking much during a group discussion share their ideas.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the group discussion. Task: Explain why everyone's input mattered. Action: Describe how you encouraged participation without pressuring anyone. Result: Explain how the discussion improved."
+      },
+      "explanation": "Show respect for different personalities and inclusive teamwork."
+    },
+    {
+      "id": "behavioral-b-25",
+      "technologyName": "Behavioral",
+      "type": "BEHAVIORAL",
+      "difficultyLabel": "medium",
+      "tags": ["code-maintenance", "code-comprehension"],
+      "prompt": "Tell me about a time you had to understand and modify code that someone else had written.",
+      "answer": {
+        "sampleAnswer": "Situation: Describe the existing code and your assignment. Task: Explain what needed to change. Action: Describe how you read, tested, and modified the code. Result: Explain whether your changes worked and what you learned."
+      },
+      "explanation": "Demonstrate your ability to work with an existing codebase instead of starting from scratch."
+    }
+  ]
+}
