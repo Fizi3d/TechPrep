@@ -1,4 +1,4 @@
-import pool from "./db.js";
+import pool from "../db.js";
 
 try {
     const result = await pool.query("SELECT NOW()");
