@@ -1,0 +1,317 @@
+{
+  "name": "techprep-technical-questions-b",
+  "version": "1.0.0",
+  "questionCount": 25,
+  "description": "Original technical interview questions based on official developer documentation.",
+  "references": [
+    "https://git-scm.com/docs/git",
+    "https://git-scm.com/docs/gitfaq",
+    "https://docs.docker.com/learn/paths/get-started-with-docker-containers/",
+    "https://docs.docker.com/learn/content/write-your-first-dockerfile/",
+    "https://man7.org/linux/man-pages/",
+    "https://www.gnu.org/software/bash/manual/",
+    "https://docs.pytest.org/en/stable/"
+  ],
+  "questions": [
+    {
+      "id": "technical-b-01",
+      "technologyName": "Git",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["git", "remote-repositories"],
+      "prompt": "What is the difference between git fetch and git pull?",
+      "answer": {
+        "back": "git fetch downloads remote changes without merging them into your current branch. git pull fetches the changes and then integrates them into your current branch using a merge or rebase."
+      },
+      "explanation": "Use fetch when you want to review remote changes before integrating them. Pull is useful when you are ready to update your branch."
+    },
+    {
+      "id": "technical-b-02",
+      "technologyName": "Git",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["git", "gitignore"],
+      "prompt": "If a file is already tracked by Git, will adding it to .gitignore stop Git from tracking it?",
+      "answer": {
+        "back": "No. .gitignore normally affects untracked files. To stop tracking an existing file while keeping the local copy, you can use git rm --cached followed by a commit."
+      },
+      "explanation": "Adding a tracked file to .gitignore does not automatically remove it from Git's index."
+    },
+    {
+      "id": "technical-b-03",
+      "technologyName": "Git",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["git", "version-control"],
+      "prompt": "What does git revert do, and how is it different from git reset?",
+      "answer": {
+        "back": "git revert creates a new commit that reverses changes from an earlier commit. git reset moves the current branch to another commit and can also change the index or working tree, depending on the options."
+      },
+      "explanation": "Revert is generally safer for undoing changes on shared branches because it preserves existing commit history."
+    },
+    {
+      "id": "technical-b-04",
+      "technologyName": "Git",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["git", "branches"],
+      "prompt": "What is the difference between merging a branch and rebasing a branch in Git?",
+      "answer": {
+        "back": "Merging combines development histories, often using a merge commit. Rebasing takes commits from one branch and reapplies them on top of another commit, creating a rewritten sequence of commits."
+      },
+      "explanation": "Merging preserves the original branch history, while rebasing can produce a cleaner linear history but changes commit identities."
+    },
+    {
+      "id": "technical-b-05",
+      "technologyName": "Git",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["git", "workflow"],
+      "prompt": "What is the purpose of git stash when working on a project?",
+      "answer": {
+        "back": "git stash temporarily saves selected uncommitted changes so you can work with a cleaner working directory and restore those changes later."
+      },
+      "explanation": "Stashing can help when you need to switch tasks without committing unfinished work."
+    },
+    {
+      "id": "technical-b-06",
+      "technologyName": "Git",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["git", "commit-history"],
+      "prompt": "What does it mean when Git is in a detached HEAD state?",
+      "answer": {
+        "back": "A detached HEAD means HEAD points directly to a commit instead of a local branch. You can inspect files and create commits, but new commits may become difficult to find unless you create a branch or another reference to them."
+      },
+      "explanation": "Detached HEAD is useful for inspecting older versions, but new development should usually happen on a branch."
+    },
+    {
+      "id": "technical-b-07",
+      "technologyName": "Docker",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["docker", "containers"],
+      "prompt": "What is the difference between a Docker image and a Docker container?",
+      "answer": {
+        "back": "A Docker image is a packaged template containing an application's files and configuration. A container is an instance created from that image, with its own runtime state."
+      },
+      "explanation": "Multiple containers can be created from the same image, allowing the application to run in separate environments."
+    },
+    {
+      "id": "technical-b-08",
+      "technologyName": "Docker",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["docker", "dockerfile"],
+      "prompt": "What is the difference between RUN and CMD in a Dockerfile?",
+      "answer": {
+        "back": "RUN executes a command while building the image and saves the resulting changes. CMD defines a default command that runs when a container starts."
+      },
+      "explanation": "RUN is commonly used to install dependencies during a build, while CMD is commonly used to start the application."
+    },
+    {
+      "id": "technical-b-09",
+      "technologyName": "Docker",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["docker", "networking"],
+      "prompt": "What does the command docker run -p 8080:3000 do?",
+      "answer": {
+        "back": "It starts a container and publishes container port 3000 through port 8080 on the host. A service listening on the container's port 3000 can then be reached through the host's port 8080, if network and binding settings allow it."
+      },
+      "explanation": "Docker port publishing uses the format HOST_PORT:CONTAINER_PORT."
+    },
+    {
+      "id": "technical-b-10",
+      "technologyName": "Docker",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["docker", "volumes", "databases"],
+      "prompt": "Why are Docker volumes useful when running a database inside a container?",
+      "answer": {
+        "back": "Docker volumes keep database files outside the container's writable layer. A named volume can preserve the database data even when the container is removed and replaced."
+      },
+      "explanation": "Without persistent storage, removing a database container can also remove data stored only in that container's writable layer."
+    },
+    {
+      "id": "technical-b-11",
+      "technologyName": "Docker",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["docker", "dockerignore"],
+      "prompt": "What is the purpose of a .dockerignore file?",
+      "answer": {
+        "back": "A .dockerignore file tells Docker which files and folders to exclude from the build context. This can reduce unnecessary data sent to the builder and help keep local files out of the build."
+      },
+      "explanation": "For example, excluding unnecessary local dependencies and temporary files can make Docker builds more efficient."
+    },
+    {
+      "id": "technical-b-12",
+      "technologyName": "Docker",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["docker", "container-management"],
+      "prompt": "What is the difference between docker ps and docker ps -a?",
+      "answer": {
+        "back": "docker ps lists running containers by default. docker ps -a lists all containers, including stopped containers."
+      },
+      "explanation": "The -a option is useful when troubleshooting containers that have exited or failed to start."
+    },
+    {
+      "id": "technical-b-13",
+      "technologyName": "Linux",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["linux", "file-permissions"],
+      "prompt": "What permissions does chmod 750 give to a file on Linux?",
+      "answer": {
+        "back": "The owner gets read, write, and execute permissions (7). The group gets read and execute permissions (5). Everyone else gets no permissions (0)."
+      },
+      "explanation": "Numeric permissions use read = 4, write = 2, and execute = 1. The values are added for each permission group."
+    },
+    {
+      "id": "technical-b-14",
+      "technologyName": "Linux",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["linux", "symbolic-links"],
+      "prompt": "What is a symbolic link in Linux, and how can you create one?",
+      "answer": {
+        "back": "A symbolic link is a filesystem entry that refers to another path. You can create one using ln -s TARGET LINK_NAME."
+      },
+      "explanation": "Symbolic links can point to files or directories and may become broken if their target no longer exists."
+    },
+    {
+      "id": "technical-b-15",
+      "technologyName": "Linux",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["linux", "command-line", "grep"],
+      "prompt": "How can you search recursively for the text ERROR inside files in a directory using grep?",
+      "answer": {
+        "back": "You can use grep -r 'ERROR' directory_name. The -r option tells grep to search through files in the directory and its subdirectories."
+      },
+      "explanation": "Recursive searching is useful when looking for error messages or code references across multiple files."
+    },
+    {
+      "id": "technical-b-16",
+      "technologyName": "Linux",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["linux", "bash", "pipes"],
+      "prompt": "What does the pipe operator | do between two commands in a Bash shell?",
+      "answer": {
+        "back": "The pipe operator connects the standard output of the command on the left to the standard input of the command on the right."
+      },
+      "explanation": "For example, a command can generate text and another command can filter that text without saving it to a temporary file."
+    },
+    {
+      "id": "technical-b-17",
+      "technologyName": "Linux",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["linux", "bash", "processes"],
+      "prompt": "What is the difference between standard output and standard error in a Linux process?",
+      "answer": {
+        "back": "Standard output, usually file descriptor 1, is used for normal program output. Standard error, usually file descriptor 2, is used for error messages and diagnostics. They can be redirected separately."
+      },
+      "explanation": "Separating regular output from errors makes it easier to save results while still viewing or recording failures."
+    },
+    {
+      "id": "technical-b-18",
+      "technologyName": "Linux",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["linux", "bash", "exit-status"],
+      "prompt": "In Bash, what does an exit status of 0 usually mean, and how can you check the previous command's exit status?",
+      "answer": {
+        "back": "An exit status of 0 normally indicates success. A nonzero status normally indicates some kind of failure or special condition. You can inspect the previous command's exit status using echo $?."
+      },
+      "explanation": "Exit statuses help shell scripts decide whether to continue, retry, or stop after a command."
+    },
+    {
+      "id": "technical-b-19",
+      "technologyName": "Software Testing",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["testing", "unit-testing"],
+      "prompt": "What is unit testing, and what kind of code does it usually test?",
+      "answer": {
+        "back": "Unit testing checks a small part of a program, such as a function or class, to make sure it behaves as expected. Dependencies are often replaced or controlled so the unit can be tested separately."
+      },
+      "explanation": "Unit tests help developers find problems in individual components before combining them with the rest of the system."
+    },
+    {
+      "id": "technical-b-20",
+      "technologyName": "Software Testing",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["testing", "integration-testing"],
+      "prompt": "How is integration testing different from unit testing?",
+      "answer": {
+        "back": "Unit testing checks individual parts of an application. Integration testing checks whether multiple components work correctly together, such as an API route interacting with a database."
+      },
+      "explanation": "An individual function might work correctly on its own while the connection between two components still contains errors."
+    },
+    {
+      "id": "technical-b-21",
+      "technologyName": "Software Testing",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["testing", "fixtures"],
+      "prompt": "What is a test fixture, and why is it useful?",
+      "answer": {
+        "back": "A test fixture provides setup data or resources that tests need, such as a sample user or database connection. Fixtures help reuse setup code and provide consistent test conditions."
+      },
+      "explanation": "Reusable fixtures reduce repeated setup code and can help keep tests independent from one another."
+    },
+    {
+      "id": "technical-b-22",
+      "technologyName": "Software Testing",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["testing", "parameterized-tests"],
+      "prompt": "What is parameterized testing, and how does it help avoid repeated test code?",
+      "answer": {
+        "back": "Parameterized testing runs the same test logic with different input values and expected results. Instead of writing a separate test function for every case, the developer provides a list of test cases."
+      },
+      "explanation": "Parameterized tests make it easier to check many inputs while keeping the test code organized."
+    },
+    {
+      "id": "technical-b-23",
+      "technologyName": "Software Testing",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["testing", "boundary-testing"],
+      "prompt": "A function accepts ages from 18 through 65 inclusive. Which boundary values would be useful to test?",
+      "answer": {
+        "back": "Useful boundary tests include 17, 18, 19, 64, 65, and 66. These check values just below, at, and just above both ends of the valid range."
+      },
+      "explanation": "Boundary testing helps find mistakes involving minimum and maximum values, especially incorrect comparison operators."
+    },
+    {
+      "id": "technical-b-24",
+      "technologyName": "Software Testing",
+      "type": "FLASHCARD",
+      "difficultyLabel": "easy",
+      "tags": ["testing", "regression-testing"],
+      "prompt": "What is regression testing, and why should it be done after changing code?",
+      "answer": {
+        "back": "Regression testing checks that existing functionality still works after code changes. It helps detect bugs introduced while adding new features or fixing other problems."
+      },
+      "explanation": "A change in one part of an application can accidentally affect features that previously worked."
+    },
+    {
+      "id": "technical-b-25",
+      "technologyName": "Software Testing",
+      "type": "FLASHCARD",
+      "difficultyLabel": "medium",
+      "tags": ["testing", "mocking"],
+      "prompt": "Why might a developer use a mock object when testing an API feature?",
+      "answer": {
+        "back": "A mock object can replace a real dependency, such as an external API, with controlled behavior. This lets developers test how their code handles specific responses without depending on the real service."
+      },
+      "explanation": "Mocking can make tests faster, more predictable, and easier to run when external services are unavailable."
+    }
+  ]
+}
