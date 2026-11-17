@@ -45,7 +45,7 @@ psql -U postgres -d techprep -f db/seed.sql
 After setting up the database and running the SQL files, run:
 
 ```bash
-node db/import-questions.js
+npm run db-setup
 ```
 
 This imports 110 interview questions into the database, including their answers, explanations, difficulty levels, and tags.
