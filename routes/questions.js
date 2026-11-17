@@ -135,7 +135,7 @@ export async function findQuestions({ type, difficulty, search, tags, page, limi
 }
 
 // GET /api/questions?type=&difficulty=&tag=&search=&page=&limit=
-questionsRouter.get("/questions", requireAuth, async (req, res) => {
+questionsRouter.get("/", requireAuth, async (req, res) => {
     const { filters, error } = parseQuestionFilters(req.query);
     if (error) {
         return res.status(400).json({ error });
@@ -152,7 +152,7 @@ questionsRouter.get("/questions", requireAuth, async (req, res) => {
 
 // POST /api/questions/:questionId/tags
 // Example body: { "tagId": 1 }
-questionsRouter.post("/questions/:questionId/tags", requireAuth, requireAdmin, async (req, res) => {
+questionsRouter.post("/:questionId/tags", requireAuth, requireAdmin, async (req, res) => {
     const questionId = Number(req.params.questionId);
     const tagId = Number(req.body?.tagId);
 
@@ -206,7 +206,7 @@ questionsRouter.post("/questions/:questionId/tags", requireAuth, requireAdmin, a
 
 
 questionsRouter.delete(
-  "/questions/:questionId/tags/:tagId",
+  "/:questionId/tags/:tagId",
   requireAuth,
   requireAdmin,
   async (req, res) => {
