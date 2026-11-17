@@ -4,8 +4,9 @@ import pool from "./db.js";
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
 import loginRouter from "./routes/login.js";
-import questionsRouter from "./routes/questions.js";
 import tagsRouter from "./routes/tags.js";
+import questionsRouter from "./routes/questions.js";
+import jobsRouter from "./routes/jobs.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -29,8 +30,10 @@ app.use(session({
 }));
 
 app.use("/api", loginRouter);
-app.use("/api", questionsRouter);
-app.use("/api", tagsRouter);
+app.use("/api/questions", questionsRouter);
+app.use("/api/tags", tagsRouter);
+app.use("/api/jobs", jobsRouter);
+
 app.get("/api/health", (req, res) => {
     res.json({
         status: "ok",
