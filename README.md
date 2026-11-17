@@ -159,6 +159,41 @@ All tag routes require a logged-in user session. Creating and deleting tags requ
 | `DELETE` | `/api/tags/:id` | Admin | Deletes a tag |
 | `POST` | `/api/questions/:questionId/tags` | Admin | Assigns an existing tag to a question |
 
+## Jobs Routes
+
+All job routes require a logged-in user session. Users can only access their own job descriptions.
+
+| Method | Path | Access | Description |
+|---|---|---|---|
+| `GET` | `/api/jobs` | Logged-in user | Returns all job descriptions for the authenticated user |
+| `POST` | `/api/jobs` | Logged-in user | Creates a new job description |
+| `GET` | `/api/jobs/:jobId` | Logged-in user | Returns a specific job description |
+| `DELETE` | `/api/jobs/:jobId` | Logged-in user | Deletes a job description |
+| `GET` | `/api/jobs/:jobId/tags` | Logged-in user | Returns all tags for a job description |
+| `POST` | `/api/jobs/:jobId/tags` | Logged-in user | Assigns an existing tag to a job description |
+| `DELETE` | `/api/jobs/:jobId/tags/:tagId` | Logged-in user | Removes a tag from a job description |
+
+### Create a job description
+
+`POST /api/jobs`
+
+Content-Type: application/json
+
+data:
+`{ "title": "", "company": "", "content": "" }`
+
+- `title` and `content` are required
+- `company` is optional
+
+Response (201):
+```
+{
+  "message": "Job description created",
+  "job": { "id": 1, "title": "...", "company": "...", "content": "...", "created_at": "..." }
+}
+```
+
+
 ### Get all tags
 
 ```http
@@ -188,5 +223,3 @@ Copy `client/.env.example` to `client/.env` if you need to point the app at a di
 - `/admin` - Admin
 
 API calls go through `client/src/api/client.js` (`get`, `post`, `put`, `del`).
-
-
