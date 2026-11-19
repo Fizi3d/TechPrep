@@ -148,6 +148,37 @@ Invalid parameters return 400 with `{ "error": "..." }`.
 Run the test suite with `npm test` (uses the database from your `.env`).
 A separate server process is needed for tests regarding server behavior.
 
+## Prep Plan Matching
+
+`lib/matching.js` picks the questions to practice for a job posting. It is a pure function with no database access, and the same input always gives the same plan.
+
+```js
+import pool from "./db.js";
+import { buildPrepPlan, loadQuestionsForMatching } from "./lib/matching.js";
+
+const questions = await loadQuestionsForMatching(pool);
+const { items, summary } = buildPrepPlan(["React", "JavaScript", "teamwork"], questions, {
+    size: 15,              // questions in the plan (1-100), default 15
+    behavioralShare: 0.3   // share of behavioral questions (0-1), default 0.3
+});
+// items:   [{ position, questionId, category, difficulty, score, matchedTags }]
+// summary: { requestedSize, size, postingTags, technical, behavioral, unmatchedBehavioral, uncoveredTags }
+```
+
+### Scoring rules
+
+1. Tags are compared case-insensitively.
+2. A question's **score** is how many of its tags are also posting tags. Score 0 means unmatched.
+3. Ranking: higher score first, then higher **focus** (score divided by the question's tag count), then lower question id.
+4. Questions with type `BEHAVIORAL` are behavioral; every other type is technical. By default 30% of the plan is behavioral.
+5. Each category is spread over difficulty: 30% easier (intro/easy), 40% medium, 30% harder (hard/expert). If a level runs out, the best questions from other levels fill its slots.
+6. **Coverage:** questions are picked one at a time, taking turns between difficulty levels. Each matched tag is worth `1 / (1 + times that tag is already in the plan)`, so every posting tag gets a turn before one tag fills the plan. Ties fall back to the ranking in rule 3.
+7. Technical slots only use matched questions. Behavioral slots use matched questions first, then unmatched ones, since every interview has a behavioral round.
+8. Not enough behavioral questions: technical questions take the spare slots. Not enough technical questions: extra matched behavioral questions take them; otherwise the plan is shorter than requested. A posting with no tags gets an empty plan.
+9. The plan lists technical questions, then behavioral, each from easier to harder.
+
+The unit tests need no database: `node --test tests/test-matching.js`.
+
 ## Tags Routes
 
 All tag routes require a logged-in user session. Creating and deleting tags require an admin role.
