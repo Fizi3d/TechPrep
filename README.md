@@ -64,6 +64,8 @@ The original question content is preserved and imported into our PostgreSQL data
 - `questions` - Stores interview questions and answers.
 - `tags` - Stores technologies and question topics.
 - `question_tags` - Connects questions with their tags.
+- `prep_plans` - One prep plan per job description.
+- `prep_plan_items` - The ordered questions in each prep plan.
 
 ## Auth Routes
 `path` represents the base url being hosted by the server
@@ -223,6 +225,48 @@ Response (201):
   "job": { "id": 1, "title": "...", "company": "...", "content": "...", "created_at": "..." }
 }
 ```
+
+## Prep Plan Routes
+
+A job description has at most one prep plan, built from its tags by the matching rules above. Users can only access plans for their own job descriptions; anyone else gets 404.
+
+| Method | Path | Access | Description |
+|---|---|---|---|
+| `POST` | `/api/jobs/:jobId/plan` | Logged-in user | Generates the plan (201), or regenerates it if one exists (200) |
+| `GET` | `/api/jobs/:jobId/plan` | Logged-in user | Returns the stored plan with question details |
+
+### Generate or regenerate a plan
+
+`POST /api/jobs/:jobId/plan`
+
+Optional body: `{ "size": 15, "behavioralShare": 0.3 }`
+
+- `size` is 1-100, `behavioralShare` is 0-1. Values not given keep the plan's saved values (or the defaults, 15 and 0.3, the first time).
+- The job description needs at least one tag, otherwise 400.
+- Regenerating replaces the plan's items. The same tags and question bank always give the same plan, so regenerate after changing the job's tags or when new questions are added.
+
+### Response (`GET`, and `plan` in the `POST` response)
+
+```
+{
+  "plan": {
+    "id": 1, "jobId": 4, "size": 15, "behavioralShare": 0.3,
+    "createdAt": "...", "updatedAt": "...",
+    "summary": { "total": 15, "technical": 10, "behavioral": 5, "uncoveredTags": [] },
+    "items": [
+      {
+        "id": 1, "position": 1, "category": "technical", "score": 1, "matchedTags": ["react"],
+        "question": { "id": 12, "question_text": "...", "answer_text": "...", "answer_data": {}, "explanation": "...",
+                      "difficulty": "easy", "question_type": "SHORT_ANSWER", "tags": ["React", "lifting-state"] }
+      }
+    ]
+  }
+}
+```
+
+Items are ordered technical first, then behavioral, each from easier to harder. `uncoveredTags` lists job tags no question in the plan covers.
+
+Run the tests with the server running: `node tests/test-plans.js`.
 
 
 ### Get all tags

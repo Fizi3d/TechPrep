@@ -59,3 +59,28 @@ CREATE TABLE IF NOT EXISTS job_description_tags (
   tag_id INT NOT NULL REFERENCES tags(id) ON DELETE CASCADE,
   PRIMARY KEY (job_id, tag_id)
 );
+-- one prep plan per job description, built by the tag-matching algorithm (lib/matching.js)
+CREATE TABLE IF NOT EXISTS prep_plans (
+  id SERIAL PRIMARY KEY,
+  job_id INT NOT NULL UNIQUE REFERENCES job_descriptions(id) ON DELETE CASCADE,
+  user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  size INT NOT NULL CHECK (size BETWEEN 1 AND 100),
+  behavioral_share NUMERIC(3, 2) NOT NULL CHECK (behavioral_share BETWEEN 0 AND 1),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_prep_plans_user_id ON prep_plans(user_id);
+
+-- the ordered questions in a prep plan
+CREATE TABLE IF NOT EXISTS prep_plan_items (
+  id SERIAL PRIMARY KEY,
+  plan_id INT NOT NULL REFERENCES prep_plans(id) ON DELETE CASCADE,
+  question_id INT NOT NULL REFERENCES questions(id) ON DELETE CASCADE,
+  position INT NOT NULL,
+  category VARCHAR(20) NOT NULL CHECK (category IN ('technical', 'behavioral')),
+  score INT NOT NULL DEFAULT 0,
+  matched_tags TEXT[] NOT NULL DEFAULT '{}',
+  UNIQUE (plan_id, position),
+  UNIQUE (plan_id, question_id)
+);

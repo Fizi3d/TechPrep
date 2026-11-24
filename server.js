@@ -7,6 +7,7 @@ import loginRouter from "./routes/login.js";
 import tagsRouter from "./routes/tags.js";
 import questionsRouter from "./routes/questions.js";
 import jobsRouter from "./routes/jobs.js";
+import plansRouter from "./routes/plans.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -33,6 +34,7 @@ app.use("/api", loginRouter);
 app.use("/api/questions", questionsRouter);
 app.use("/api/tags", tagsRouter);
 app.use("/api/jobs", jobsRouter);
+app.use("/api/jobs", plansRouter);
 
 app.get("/api/health", (req, res) => {
     res.json({
