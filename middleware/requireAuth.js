@@ -3,15 +3,15 @@ import db from "../db.js";
 export default async function requireAuth(req, res, next) {
   try {
     // Assumes express-session is configured and puts session data on req.session.
-    const userID = req.session?.userID;
+    const userId = req.session?.userId;
 
-    if (!userID) {
+    if (!userId) {
       return res.status(401).json({ error: "Not logged in" });
     }
 
     const result = await db.query(
       "SELECT id, email, role FROM users WHERE id = $1",
-      [userID]
+      [userId]
     );
 
     if (result.rowCount === 0) {

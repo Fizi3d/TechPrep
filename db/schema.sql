@@ -41,3 +41,21 @@ CREATE TABLE IF NOT EXISTS question_tags (
     tag_id INTEGER REFERENCES tags(id),
     PRIMARY KEY (question_id, tag_id)
 );
+
+CREATE TABLE IF NOT EXISTS job_descriptions (
+  id SERIAL PRIMARY KEY,
+  user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  title VARCHAR(255) NOT NULL,
+  company VARCHAR(255),
+  content TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_job_descriptions_user_id ON job_descriptions(user_id);
+
+CREATE TABLE IF NOT EXISTS job_description_tags (
+  job_id INT NOT NULL REFERENCES job_descriptions(id) ON DELETE CASCADE,
+  tag_id INT NOT NULL REFERENCES tags(id) ON DELETE CASCADE,
+  PRIMARY KEY (job_id, tag_id)
+);

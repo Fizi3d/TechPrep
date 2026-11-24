@@ -67,7 +67,7 @@ loginRouter.post("/logout", (req, res) => {
     req.session.destroy(() => res.json({ok: true}));
 });
 
-loginRouter.get("/me", requireAuth, async (req, res) => {
+loginRouter.get("/me", async (req, res) => {
     if (!req.session.userId) return res.status(401).json({ error: "not logged in"});
     const result = await pool.query(
         "SELECT id, username, email FROM users WHERE id = $1",
